@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+/* Header */
+
+header {
+    background-color: #164a7b;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 16px;
+}
+
+/* Navigation */
+
+nav {
+    background-color: #123b61;
+    text-align: center;
+    padding: 14px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main */
+
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Welcome section */
+
+.welcome {
+    background: white;
+    padding: 35px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.welcome h2 {
+    color: #164a7b;
+    margin-bottom: 15px;
+}
+
+.welcome p {
+    line-height: 1.7;
+}
+
+/* Cards */
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    width: 300px;
+    padding: 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    color: #164a7b;
+    margin-bottom: 10px;
+}
+
+.card p {
+    line-height: 1.5;
+}
+
+.card:hover {
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+/* Page sections */
+
+.page {
+    background: white;
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.page h2 {
+    color: #164a7b;
+    margin-bottom: 20px;
+}
+
+.page p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* HOD */
+
+.hod {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.hod img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.hod h3 {
+    color: #164a7b;
+    margin-bottom: 10px;
+}
+
+/* Faculty */
+
+.faculty-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.faculty {
+    width: 250px;
+    background: #f4f6f8;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.faculty img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.faculty h3 {
+    color: #164a7b;
+    margin-bottom: 8px;
+}
+
+/* Gallery */
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.gallery img {
+    width: 31%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Footer */
+
+footer {
+    background-color: #123b61;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 50px;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    nav a {
+        display: inline-block;
+        margin: 6px;
+    }
+
+    .hod {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gallery img {
+        width: 100%;
+    }
+}

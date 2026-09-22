@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>CSS Implementation Example</title>
+     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
+        }
+        .internal-box {
+            color: #2c3e50;
+            padding: 20px;
+            border: 2px solid #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="external-box">
+        This box is styled via External CSS.
+    </div>
+    
+    <div class="internal-box">
+        This box is styled via Internal CSS.
+    </div>
+   
+    <div style="color: #e74c3c; font-weight: bold; padding: 20px; border: 2px solid #e74c3c;">
+        This box is styled via Inline CSS.
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<html>
+<head>
+   
+    <title>Dynamic JavaScript String & Math Functions</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 2rem 1rem;
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+        
+  
+        }
+        h2 {
+            margin-top: 0;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+            color: var(--primary);
+        }
+     
+        h3 {
+            margin: 0 0 0.5rem 0;
+            font-family: monospace;
+            font-size: 1.1rem;
+            color: #b45309;
+        }
+        p {
+            margin: 0 0 0.5rem 0;
+        }
+       
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>JavaScript String & Math Objects (JS Rendered)</h1>
+    
+    <div class="grid">
+        <div class="card" id="string-card">
+            <h2>String Object Functions</h2>
+            <p>String: <span class="highlight">" Hello, JavaScript World! "</span></p>
+            <br>
+            <div id="string-functions-container"></div>
+        </div>
+
+
+        <div class="card" id="math-card">
+            <h2>Math Object Functions</h2>
+            <p>Predefined numeric and calculations utilities:</p>
+            <br>
+            <div id="math-functions-container"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function()
+ {
+    const Str = " Hello, JavaScript World! ";
+
+    const stringFunctions = [
+        {
+            name: ".toUpperCase()",
+            desc: "Converts all characters in the string to uppercase letters.",
+            getOutput: () => `Output: <span class="output-val">"${Str.toUpperCase()}"</span>`
+        },
+        {
+            name: ".toLowerCase()",
+            desc: "Converts all characters in the string to lowercase letters.",
+            getOutput: () => `Output: <span class="output-val">"${Str.toLowerCase()}"</span>`
+        },
+        {
+            name: ".trim()",
+            desc: "Removes white spaces from both ends of a string.",
+            getOutput: () => `Output: <span class="output-val">"${Str.trim()}"</span>`
+        },
+        {
+            name: ".charAt(index)",
+            desc: "Returns the character located at the specified index location.",
+            getOutput: () => `charAt(8) Output: <span class="output-val">"${Str.charAt(8)}"</span>`
+        },
+        {
+            name: ".indexOf(substring)",
+            desc: "Returns the index position of the first occurrence of the specified text.",
+            getOutput: () => `indexOf("Java") Output: <span class="output-val">${Str.indexOf("Java")}</span>`
+        },
+        {
+            name: ".substring(start, end)",
+            desc: "Extracts characters from a string between two specified index points.",
+            getOutput: () => `substring(8, 18) Output: <span class="output-val">"${Str.substring(8, 18)}"</span>`
+        }
+    ];
+
+    // 2. Data configuration for Math functions
+    const mathFunctions = [
+        {
+            name: "Math.abs(x)",
+            desc: "Returns the absolute positive value magnitude of a number.",
+            getOutput: () => `Math.abs(-7.25) Output: <span class="output-val">${Math.abs(-7.25)}</span>`
+        },
+        {
+            name: "Math.round(x)",
+            desc: "Rounds a numeric value up or down to its nearest integer boundary.",
+            getOutput: () => `Math.round(4.7) Output: <span class="output-val">${Math.round(4.7)}</span>`
+        },
+        {
+            name: "Math.ceil(x)",
+            desc: "Rounds a numeric value upwards to the next nearest integer value.",
+            getOutput: () => `Math.ceil(4.1) Output: <span class="output-val">${Math.ceil(4.1)}</span>`
+        },
+        {
+            name: "Math.floor(x)",
+            desc: "Rounds a numeric value downwards to the next lowest integer value.",
+            getOutput: () => `Math.floor(4.9) Output: <span class="output-val">${Math.floor(4.9)}</span>`
+        },
+        {
+            name: "Math.pow(base, exponent)",
+            desc: "Returns the mathematical base raised to the power value of the exponent.",
+            getOutput: () => `Math.pow(2, 4) Output: <span class="output-val">${Math.pow(2, 4)}</span>`
+        },
+        {
+            name: "Math.sqrt(x)",
+            desc: "Calculates and returns the exact square root value of a positive target number.",
+            getOutput: () => `Math.sqrt(49) Output: <span class="output-val">${Math.sqrt(49)}</span>`
+        },
+        {
+            name: "Math.random()",
+            desc: "Generates a pseudo-random decimal number ranging from 0 to 1.",
+            getOutput: () => `Math.random() Output: <span class="output-val">${Math.random().toFixed(5)}...</span>`
+        }
+    ];
+
+    // Helper function to dynamically build and inject HTML components into the DOM
+    function renderFunctions(dataArray, targetContainerId) {
+        const container = document.getElementById(targetContainerId);
+        
+        dataArray.forEach(item => {
+            // Create wrapper block
+            const block = document.createElement('div');
+            block.className = 'function-block';
+
+            // Create title
+            const title = document.createElement('h3');
+            title.textContent = item.name;
+
+            // Create description
+            const description = document.createElement('p');
+            description.textContent = item.desc;
+
+            // Create container box for the execution result
+            const demoBox = document.createElement('div');
+            demoBox.className = 'demo-box';
+            demoBox.innerHTML = item.getOutput();
+
+            // Append parts to block, then to card container
+            block.appendChild(title);
+            block.appendChild(description);
+            block.appendChild(demoBox);
+            container.appendChild(block);
+        });
+    }
+
+    // Execute generation loops
+    renderFunctions(stringFunctions, 'string-functions-container');
+    renderFunctions(mathFunctions, 'math-functions-container');
+});
+</script>
+
+</body>
+</html>
